@@ -26,9 +26,9 @@ dropout = 0.1
 # Train
 checkpoint_path = "./model_new"
 logger_path = "./logger"
-data_path = '/opt/tiger/speech_data/LJSpeech-1.1'
-mel_ground_truth = "/opt/tiger/speech_data/LJSpeech-1.1/mels"
-alignment_path = "/opt/tiger/speech_data/LJSpeech-1.1/alignments"
+data_path = '/opt/tiger/speech_data/tts/LJSpeech-1.1'
+mel_ground_truth = "/opt/tiger/speech_data/tts/LJSpeech-1.1/mels"
+alignment_path = "/opt/tiger/speech_data/tts/LJSpeech-1.1/alignments"
 
 batch_size = 32
 epochs = 1000
