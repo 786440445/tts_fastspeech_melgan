@@ -30,8 +30,9 @@ def get_data_to_buffer():
         mel_gt_target = np.load(mel_gt_name)
         duration = np.load(os.path.join(
             hparams.alignment_path, str(i)+".npy"))
+        character = text[i].strip()
         character = np.array(
-            text_to_sequence(text[i], hparams.text_cleaners))
+            text_to_sequence(character, hparams.text_cleaners))
 
         character = torch.from_numpy(character)
         duration = torch.from_numpy(duration)

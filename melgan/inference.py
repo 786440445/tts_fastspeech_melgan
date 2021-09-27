@@ -6,8 +6,8 @@ import argparse
 import numpy as np
 from scipy.io.wavfile import write
 
-from model.generator import Generator
-from utils.hparams import HParam, load_hparam_str
+from melgan.generator import Generator
+from melgan.utils.hparams import HParam, load_hparam_str
 
 MAX_WAV_VALUE = 32768.0
 
