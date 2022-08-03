@@ -6,9 +6,8 @@ import torch
 import argparse
 import numpy as np
 
-from utils.stft import TacotronSTFT
-from utils.hparams import HParam
-from utils.utils import read_wav_np
+from melgan.utils.stft import TacotronSTFT
+from melgan.utils.hparams import HParam
 
 
 def main(hp, args):

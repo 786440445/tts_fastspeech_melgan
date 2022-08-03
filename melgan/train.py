@@ -7,9 +7,9 @@ import torch.nn.functional as F
 import itertools
 import traceback
 
-from model.generator import Generator
-from model.multiscale import MultiScaleDiscriminator
-from .utils import get_commit_hash
+from melgan.generator import Generator
+from melgan.multiscale import MultiScaleDiscriminator
+from utils import get_commit_hash
 from .validation import validate
 
 

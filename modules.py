@@ -60,6 +60,7 @@ class LengthRegulator(nn.Module):
         self.duration_predictor = DurationPredictor()
 
     def LR(self, x, duration_predictor_output, mel_max_length=None):
+        print(f'duration_predictor_output : {duration_predictor_output.shape}')
         expand_max_len = torch.max(
             torch.sum(duration_predictor_output, -1), -1)[0]
         alignment = torch.zeros(duration_predictor_output.size(0),
@@ -68,7 +69,6 @@ class LengthRegulator(nn.Module):
         alignment = create_alignment(alignment,
                                      duration_predictor_output.cpu().numpy())
         alignment = torch.from_numpy(alignment).to(device)
-
         output = alignment @ x
         if mel_max_length:
             output = F.pad(

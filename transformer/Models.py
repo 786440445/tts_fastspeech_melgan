@@ -3,7 +3,7 @@ import torch.nn as nn
 import numpy as np
 import hparams as hp
 
-import transformer.Constants as Constants
+import text.constants as Constants
 from transformer.Layers import FFTBlock, PreNet, PostNet, Linear
 
 

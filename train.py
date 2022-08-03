@@ -14,12 +14,12 @@ import os
 import time
 import math
 
-from model import FastSpeech
+import hparams as hp
+from fastspeech.model import FastSpeech
 from loss import DNNLoss
 from dataset import BufferDataset, DataLoader
 from dataset import get_data_to_buffer, collate_fn_tensor
 from optimizer import ScheduledOptim
-import hparams as hp
 import utils
 
 
@@ -103,13 +103,6 @@ def main(args):
                 src_pos = db["src_pos"].long().to(device)
                 max_mel_len = db["mel_max_len"]
 
-                print('character: ', character)
-                print('mel_target: ', mel_target)
-                print('duration: ', duration)
-                print('mel_pos: ', mel_pos)
-                print('src_pos: ', src_pos)
-                print('max_mel_len: ', max_mel_len)
-                from IPython import embed; embed(using=False); exit()
                 # Forward
                 mel_output, mel_postnet_output, duration_predictor_output = model(character,
                                                                                   src_pos,
